@@ -120,7 +120,7 @@ section {
 
 .section-header h2 span {
     color: var(--clr-fn-dark2);
-    text-decoration: underline wavy;
+    /* text-decoration: underline wavy; */
 }
 
 .section-header h3 {
