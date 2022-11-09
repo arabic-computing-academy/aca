@@ -1,0 +1,196 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .2s linear;
+    /* font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear; */
+}
+
+:root {
+--clr-primary:#ff5959;
+--clr-dark1: #000000;
+--clr-dark2: #1d1d1d;
+--clr-dark3: #333333;
+--clr-dark4: #444444;
+--clr-light1: #ffffff;
+--clr-light2: #e1e1e1;
+--clr-light3: #d1d1d1;
+--clr-light4: #c8c8c8;
+--clr-trprnt: transparent;
+
+    --clr-bg-dark1: #000000;
+    --clr-bg-dark2: #1d1d1d;
+    --clr-bg-dark3: #333333;
+    --clr-bg-dark4: #444444;
+    --clr-bg-light1: #ffffff;
+    --clr-bg-light2: #e1e1e1;
+    --clr-bg-light3: #d1d1d1;
+    --clr-bg-light4: #c8c8c8;
+    --clr-btn-bg: transparent;
+    --clr-btn-light: #d1d1d1;
+    --clr-btn-dark: #ff5959;
+    --clr-icon-light: #d1d1d1;
+    --clr-icon-dark: #ff5959;
+    --clr-fn-dark1: #000000;
+    --clr-fn-dark2: #ff5959;
+    --clr-fn-light1: #ffffff;
+    --clr-fn-light2: #e1e1e1;
+    --clr-fn-light3: #c8c8c8;
+    --clr-fn-light4: #989898;
+    --clr-gdt-navbar: linear-gradient(180deg, #454545 0%, #000000 50%, #000000 100%);
+    --typewriterSpeed: 2s;
+    --typewriterCharacters: 24;
+    --transition-time: 0.2s;
+    --fs-h1: 2rem;
+    --fs-title: 1.7rem;
+    --fs-subtitle: 1.2rem;
+    --fs-normal: 1rem;
+    --fs-sm: .8rem;
+    --ff-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --ff-txt: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --br: 0.5em;
+    --transition: transform 200ms cubic-bezier(0.21, 1, 0.81, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+    overflow-x: hidden;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--clr-bg-dark1);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--clr-btn-dark);
+    border-radius: 5rem;
+}
+
+::selection {
+    background: var(--clr-btn-dark);
+}
+
+::marker {
+    color: var(--clr-fn-dark2);
+}
+
+body {
+    color: var(--clr-fn-light1);
+    font-family: var(--ff-txt);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-title);
+}
+
+section {
+    padding: 0 5%;
+}
+
+.section-header {
+    text-align: center;
+    padding: 3rem 0;
+    line-height: 2.5rem;
+
+}
+
+.section-header h2 {
+    font-size: var(--fs-h1);
+    font-family: var(--ff-title);
+}
+
+.section-header h2 span {
+    color: var(--clr-fn-dark2);
+    /* text-decoration: underline wavy; */
+}
+
+.section-header h3 {
+    font-size: var(--fs-subtitle);
+    font-family: var(--ff-title);
+    color: var(--clr-fn-light3);
+}
+
+.btn {
+    text-decoration: none;
+    padding: 1rem 3rem;
+    width: fit-content;
+    color: var(--clr-fn-light2);
+    border: 1px solid var(--clr-bg-light2);
+    border-radius: 2px;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn:before,
+.btn:after {
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    width: 2px;
+    content: "";
+    background: var(--clr-btn-dark);
+    transition: all 0.4s;
+}
+
+.btn:before {
+    left: 0px;
+    top: 0px;
+}
+
+.btn:after {
+    right: 0px;
+    bottom: 0px;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+.btn:hover {
+    border: 1px solid var(--clr-btn-dark);
+    background: var(--clr-btn-dark);
+    color: var(--clr-bg-light2);
+}
+.btn-fw {
+    width: 100%;
+    text-align: center;
+}
+
+body section:nth-child(even) {
+    min-height: 100vh;
+    background-color: var(--clr-bg-dark2);
+    background-attachment: fixed;
+
+}
+
+body section:nth-child(odd) {
+    min-height: 100vh;
+    background-color: var(--clr-bg-dark3);
+    background-attachment: fixed;
+}

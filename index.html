@@ -1,12 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AC-Academy </title>
+    <link rel="icon" type="image/x-icon" href="img/students.svg">
+    <link rel="stylesheet" href="css/global-setting.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    <h1>Arabic Computing Academy</h1>
+    <header class="banner" lang="en" dir="ltr">
+        <div class="skills-imgs">
+            <img src="img/html5.png" alt="html5" id="html" />
+            <img src="img/css3.png" alt="css" id="css" />
+            <img src="img/js2.png" alt="javascript" id="js" />
+            <img src="img/bootstrap.png" alt="bootstrap" id="bs" />
+            <img src="img/jquery-vertical.png" alt="jquery" id="jq" />
+            <img src="img/php-icon.png" alt="php" id="php" />
+        </div>
+        <div class="avatar" style="z-index:1000 ;">
+            <a href="https://alqmase.github.io">
+                <img src="img/logo.png" alt="Computing Academy Logo" id="myphoto" />
+            </a>
+        </div>
+        <div class="identity">
+            <h1 class="name"><span>A</span>rabic <span>C</span>omputing <span>A</span>cademy</h1>
+            <h2 class="specialist">Online School</h2>
+            <h2 class="specialist" style="font-family:  Calibri, sans-serif ; font-size:calc(2vw + 14px) ;" dir="rtl">
+               أكاديمية الحوسبة العربية</h2>
+        </div>
+    </header>
+
+    <div class="navbar" dir="ltr" style="z-index: 10000 ;">
+        <div class="logo" dir="ltr">
+            <span>A</span>
+            <span>C</span>
+            <span>A</span>
+        </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-btn-container" for="menu-toggle">
+            <span class="menu-btn"></span>
+        </label>
+        <nav style="font-family:  Calibri, sans-serif ;" dir="rtl">
+            <a href="#about" alt="About">من نحن</a>
+            <a href="#services" alt="Services">التدريب</a>
+            <a href="#portfolio" alt="Portfolio">تعلم اونلاين</a>
+            <a href="#contact" alt="Contact US">اتصل بنا</a>
+        </nav>
+    </div>
+    <section id="about">
+        <img class="about-img" src="img/alqmase-alqumasi-hello.png" alt="alqmase">
+        <div class="general-info">
+            <div class="info-title">
+                <h2 style="word-spacing: 20px;  font-size: 35px; margin-bottom: 20px; margin-top: 20px;"><span style="padding-left:20px ;font-size: 35px;">أكاديمية</span>الحوسبة العربية</h2>
+                <h3 style="font-weight: normal ; word-spacing: 5px; font-size: 1.2rem; color: gainsboro; margin-bottom: 5px;">نقدم محتوى تعليمي يختصر الوقت والجهد</h3>
+            </div>
+            <p style="font-size: 1.5rem ;word-spacing: 3px; line-height: 2.8rem;">
+                تقدم أكاديمية الحوسبة العربية دورات متخصصة في علوم الحاسوب باللغة العربية. هدفنا أن تكون الأكاديمية رائدة في بناء محتوى تعليمي مرئي مميز وعالي الجودة يهتم بتطوير برمجيات الوب، وتطبيقات الجوال، والذكاء الاصطناعي، والمناهج التخصصية في الكمبيوتر. نسعى بكل ثقة لنكون الخيار الأول للطلاب العرب.
+            </p>
+            <a href="#" class="btn"> <i class="fa fa-download icon"></i> أقرأ المزيد </a>
+        </div>
+    </section>
+    <section id="counter-section">
+        <div class="counter-container">
+            <img class="counter-icon" src="img/projects.png" alt="">
+            <h2 class="counter" target-count="80" speed-ms="50">0</h2>
+            <h3 class="counter-name">المشاريع</h3>
+        </div>
+        <div class="counter-container">
+            <img class="counter-icon" src="img/Students.png" alt="">
+            <h2 class="counter" target-count="500" speed-ms="10">0</h2>
+            <h3 class="counter-name">الطلاب</h3>
+        </div>
+        <div class="counter-container">
+            <img class="counter-icon" src="img/Clients.png" alt="">
+            <h2 class="counter" target-count="60" speed-ms="50">0</h2>
+            <h3 class="counter-name">عملاءنا وشركاءنا</h3>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="section-header">
+            <h2><span>الدورات</span> التدريبيه</h2>
+            <h3>
+                انضم إلى إحدى الدورات التالية، إذا لم تكن الدورة بالشكل المطلوب بإمكانك استرجاع فلوسك حتى بعد شهر من الدورة، بعد هذا العرض لماذا تنتظر؟ سجل الآن.
+            </h3>
+        </div>
+
+        
+
+        <div class="portfolio-items">
+            <div class="project">
+                <div class="rank">5</div>
+                <div class="front">
+                    <img class="thumbnail" src="img/projects/7.webp" alt="" />
+                    <h3 class="project-title">دورة تصميم صفحات الوب</h3>
+                    <div class="stats">
+                        <p class="dev-type">Frontend</p>
+                        <div class="technologies">
+                            <img src="img/HTML5.svg" alt="" />
+                            <img src="img/css3.svg" alt="" />
+                            <img src="img/javascript.png" alt="" />
+                            <img src="img/Bootstrap.svg" alt="" />
+                            <img src="img/jquery.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="development-info">
+                        <p class="project-size">1<span>Pages</span></p>
+                        <p class="project-size">0<span>DB Table</span></p>
+                    </div>
+                    <div>
+                        <a class="btn">Live Demo</a>
+                    </div>
+                    <div class="technologies">
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/javascript.png" alt="" /></a>
+                            <p class="project-title">HTML</p>
+                            <p class="ratio">36.2%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/css3.svg" alt="" /></a>
+                            <p class="project-title">CSS</p>
+                            <p class="ratio">63%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/javascript.png" alt="" /></a>
+                            <p class="project-title">JS</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/Bootstrap.svg" alt="" /></a>
+                            <p class="project-title">Bootstrap</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/jquery.png" alt="" /></a>
+                            <p class="project-title">jQuery</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="background">
+                    <img src="img/alqmase-alqumasi.jpg" alt="" />
+                </div>
+            </div>
+            <div class="project">
+                <div class="rank">5</div>
+    
+                <div class="front">
+                    <img class="thumbnail" src="img/projects/4.webp" alt="" />
+                    <h3 class="project-title icon">دورة برمجه تطبيقات الوب</h3>
+                    <div class="stats">
+                        <p class="dev-type icon">Backend</p>
+                        <div class="technologies">
+                            <img src="img/mysql.svg" alt="" />
+                            <img src="img/php-icon.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="back">
+                    <div class="development-info">
+                        <p class="project-size">1<span>Pages</span></p>
+                        <p class="project-size">0<span>DB Table</span></p>
+                    </div>
+                    <div>
+                        <a class="btn">Live Demo</a>
+                        <!-- <a class="btn">Download</a> -->
+                    </div>
+                    <div class="technologies">
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/javascript.png" alt="" /></a>
+                            <p class="project-title">HTML</p>
+                            <p class="ratio">36.2%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/css3.svg" alt="" /></a>
+                            <p class="project-title">CSS</p>
+                            <p class="ratio">63%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/HTML5.svg" alt="" /></a>
+                            <p class="project-title">projectr 3</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="background">
+                    <img src="img/alqmase-alqumasi.jpg" alt="" />
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="rank">4</div>
+
+                <div class="front">
+                    <img class="thumbnail" src="img/projects/6.webp" alt="" />
+                    <h3 class="project-title icon">أدارة وبناء انظمة الوب</h3>
+                    <div class="stats">
+                        <p class="dev-type icon">Wordpress CMS</p>
+                        <div class="technologies">
+                            <img src="img/laravel-2.svg" alt="" />
+                            <img src="img/wordpress-icon.svg" alt="" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="development-info">
+                        <p class="project-size">1<span>Pages</span></p>
+                        <p class="project-size">0<span>DB Table</span></p>
+                    </div>
+                    <div>
+                        <a class="btn">Live Demo</a>
+                        <!-- <a class="btn">Download</a> -->
+                    </div>
+                    <div class="technologies">
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/javascript.png" alt="" /></a>
+                            <p class="project-title">HTML</p>
+                            <p class="ratio">36.2%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/css3.svg" alt="" /></a>
+                            <p class="project-title">CSS</p>
+                            <p class="ratio">63%</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/javascript.png" alt="" /></a>
+                            <p class="project-title">JS</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                        <div class="technology">
+                            <a href="#" class="icon"><img src="img/Bootstrap.svg" alt="" /></a>
+                            <p class="project-title">Bootstrap</p>
+                            <p class="ratio">34.1k</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="background">
+                    <img src="img/alqmase-alqumasi.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testim" class="testim">
+        <div class="section-header">
+            <h2><span style="padding:10px ;">ماذا</span>يقول طلابنا عنا</h2>
+            <h3>فخورين بكم، ومن أجلكم نسعى لتكونوا الافضل</h3>
+        </div>
+        <div class="wrap">
+            <span style="z-index: 1010;" id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+            <span style="z-index: 1010;" id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+            <ul id="testim-dots" class="dots">
+                <li class="dot active"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+            <div id="testim-content" class="cont">
+
+                <div class="active">
+                    <img class="img" src="img/review/B1.PNG" alt="">
+                    <h2>م/ عبدالكريم أحمد</h2>
+                    <p><q>
+                        كانت دورة مثمرة جداً، وطريقة التدريب إبداعية ومشوقة، نشكر المدرب على اهتمامه الكبير بالطلاب وحرصه على إيصال المعلومة بكافة الطرق المختلفة، واجتهاده للتأكد من وصول المعلومة لكافة الطلاب
+                    </q></p>
+                </div>
+
+                <div>
+                    <img class="img" src="img/review/g1.PNG" alt="">
+                    <h2>م/ علياء محمد</h2>
+                    <p><q>
+                        بصراحة، كان التدريب ما شاء الله، استفدنا أشياء كثير في هذه الدورة، والفضل من بعد الله يرجع للمهندس الأستاذ محمد القماسي، بذل مجهود كبير معان، كان قمة في التعامل وصبور جداً.
+                    </q></p>
+                </div>
+
+                <div>
+                    <img class="img" src="img/review/g2.PNG" alt="">
+                    <h2>م/ عبير علي</h2>
+                    <p><q>
+                        الدورة كانت من أنجح الدورات التدريبية اللي حضرتها، والذي كان السبب الرئيسي في نجاحها مدرسنا أ/محمد القُماسي، والمتمكن بتوصيل المعلومة بشكل احترافي ونشكر منصة اليمن للتكنولوجيا لدعمها في تطوير الشباب في مجالهم وإن شاء الله المزيد من التقدم والتطور.
+                    </q></p>
+                </div>
+
+                <div>
+                    <img class="img" src="img/pic-4.jpg" alt="">
+                    <h2>م/ توحيد فضل</h2>
+                    <p><q>
+                        أتقدم بالشكر الجزيل للأستاذ محمد فقد كان رائعا في تقديمه للكورس بشكل مبسط مدعم بالأمثلة والتطبيق المباشر مما ساعدنا في فهم الكورس بشكل أسرع، وكذلك أتقدم بالشكر إلى إدارة المعهد التي ساهمت بشكل كبير في خلق أجواء دراسية مناسبة جدا بتوفير كل مستلزمات الدراسة، نتمنى أن نتلقى في كورسات أخرى بإذن الله.
+                    </q></p>
+                </div>
+
+                <div>
+                    <img class="img" src="img/review/B2.PNG" alt="">
+                    <h2>م/ شهاب علي</h2>
+                    <p><q>
+                     كانت الدورة مفيدة جدا، تعلمت أشياء جديدة، والأستاذ محمدالقماسي كان من أفضل المدربين، وكذلك نشكر المعهد منصة اليمن للتكنولوجيا على كل التسهيلات التي قدمها لانجاح الدوره
+                    </q></p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section-header">
+            <h2><span>أ</span>تصل بنا</h2>
+            <h3>دعنا نكن اصدقاء وشركاء</h3>
+        </div>
+        <div class="contact-info">
+            <div class="contact-location">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.465649405833!2d44.2135381140713!3d15.351247589327915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1603da516d30ff45%3A0x8b953147592b7770!2sBab%20al-Yemen!5e0!3m2!1sen!2s!4v1657618214790!5m2!1sen!2s"
+                    style="border: 0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <form action="" class="contact-form" id="demo-form">
+                <div>
+                    <input type="text" placeholder="الاسم" />
+                    <i class="fa fa-user fa-fw"></i>
+                </div>
+                <div>
+                    <input type="text" placeholder="الايميل" />
+                    <i class="fa fa-envelope fa-fw"></i>
+                </div>
+                <div>
+                    <input type="text" placeholder="الجوال" />
+                    <i class="fa fa-phone fa-fw"></i>
+                </div>
+                <div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="الرساله"></textarea>
+                </div>
+
+                <div>
+                    <button class="btn" style="font-size:1.5rem ;">أرسال</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <address class="contact-me">
+            <div class="contact-method">
+                <i class="fa fa-envelope"></i>
+                <h3>إيميل</h3>
+                <p>aca@computing-academy.com</p>
+            </div>
+            <div class="contact-method">
+                <i class="fa fa-phone"></i>
+                <h3>جوال</h3>
+                <p>00967773091139</p>
+            </div>
+            <div class="contact-method">
+                <i class="fa fa-globe"></i>
+                <h3>المركز الرئيسي</h3>
+                <p>صنعاء القديمة - اليمن</p>
+            </div>
+        </address>
+        <div>
+            <address class="social-sites">
+                <a href="https://www.facebook.com/arabic.computing.academy"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/MAlqmase"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCKn3UA85JK6riHTNL8g9inA"><i class="fa fa-youtube"></i></a>
+                <a href="https://github.com/arabic-computing-academy"><i class="fa fa-github"></i></a>
+            </address>
+
+            <small>
+                made with <i class="fa-solid fa-heart"></i> by Mohammed Al<span>qmase</span>
+                2022
+            </small>
+        </div>
+    </footer>
 </body>
+<script src="js/counter.js"></script>
+<script src="js/testimonial.js"></script>
+<script src="https://kit.fontawesome.com/3a4ff1cdaf.js" crossorigin="anonymous"></script>
+
 </html>
