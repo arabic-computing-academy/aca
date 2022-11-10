@@ -1263,7 +1263,7 @@ footer .contact-me i {
 
 footer .social-sites i {
   color: var(--clr-icon-light);
-  transition: 0.2s ease-out;
+  transition: 0s ease-out;
 }
 
 footer .social-sites i:hover {
@@ -1278,7 +1278,7 @@ footer .social-sites {
 
 footer small i {
   font-size: 1rem;
-  animation: heart 1s ease-in-out infinite alternate;
+  animation: heart 0.8s ease-in-out infinite alternate;
 }
 
 @keyframes heart {
