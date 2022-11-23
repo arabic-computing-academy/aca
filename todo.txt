@@ -1,4 +1,0 @@
-create ads video
-create google form
-create post ads
-apply google ads
