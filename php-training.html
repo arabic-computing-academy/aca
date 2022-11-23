@@ -1665,6 +1665,8 @@
     <section class="sec" id="register-form">
         <h2 style="text-align: center;">للتسجيل يُرجى تعبئة النموذج وسوف نتواصل معك</h2>
         <form action="https://computing-school.000webhostapp.com" method="post">
+            <div id="msg" style="padding: 10px 30px; display:none ;">
+            </div>
             <input type="hidden" name="form" value="traning-register">
             <input type="text" name="name" id="" placeholder="الاسم الثلاثي">
             <input type="email" name="email" id="" placeholder="الايميل">
@@ -1708,6 +1710,16 @@
             <input style="margin-top:20px; font-size:2rem; border: none; padding:10px 30px; cursor: pointer;" type="submit" value="ارسال" class="btn" >
         </form>
     </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        for (const [key, value] of urlParams) {
+            if (key === 'msg') {
+                document.getElementById('msg').style.display='block';
+                document.getElementById('msg').innerHTML = '<p style=" padding:10px 30px; background-color: #7ae57a; color: black; border-radius: 5px;  ">تم الارسال بنجاح</p>';
+            }
+        }
+    </script>
 </body>
 
 </html>
