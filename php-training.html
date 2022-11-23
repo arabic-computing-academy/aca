@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html lang="ar" dir="rtl">
 
 <head>
@@ -8,146 +9,125 @@
     <title>AC-Academy </title>
     <link rel="icon" type="image/x-icon" href="img/students.svg">
     <style>
+        :root {
+            --clr-primary: #5e36e3;
+            --clr-secondary: #ff81d3;
+            --clr-secondary2: #ffc4c4;
+            --clr-white1: #fff;
+            --clr-white2: #f0f8ff;
+            --clr-white3: #f5f5f5;
+            --clr-gray: #f5e9e9;
+            --clr-black1: #000;
+            --clr-black2: #2e2a2a;
+            --clr-black3: #272728;
+            --clr-black4: #322828;
+            --clr-black5: #4e4e4e;
+            --clr-darkblue1: #031a2a;
+            --clr-darkblue2: #012239b3;
+            --grd: linear-gradient(50deg, #ff81d3, #7855ed, #5e36e3);
+            --grd-hover: linear-gradient(20deg, #ff81d3, #7855ed, #3f14d0, #3f14d0, #3f14d0);
+            --ff-ar-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-ar-text: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-en-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-en-text: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+        }
+
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
-        header {
-            height: 350px;
+        body {
+            font-family: var(--ff-ar-text);
+        }
+
+        #header {
+            height: 400px;
             width: 100%;
-            background-image: linear-gradient(50deg, #ff81d3, #7855ed, #5e36e3);
+            background-image: var(--grd);
             position: relative;
-            color: #f0f8ff;
             text-align: center;
             padding-top: 50px;
-            font-size: .9em;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
-        header .instructor {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            bottom: -250px;
-            left: 50%;
-            color: #2e2a2a;
-            font-size: 1.5em;
-        }
-
-        .instructor h3 {
-            color: #f5f5f5;
-            margin-bottom: 10px;
-        }
-
-        header .instructor img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #ffb2e4be;
-        }
-
-        main .p {
-            min-height: 50vh;
-            color: #322828;
-            padding: 100px;
-            padding-top: 150px;
-            text-align: center;
-            font-size: 1.5em;
-            line-height: 50px;
-
-        }
-        
-        .logo {
+        #header #logo {
             position: absolute;
             right: 30px;
             width: 80px;
             border-radius: 50%;
             top: 20px;
-            box-shadow: 10px 10px 30px #ffb2e4be;
+            box-shadow: 5px 5px 30px var(--clr-secondary2);
         }
 
-        header h2 {
-            margin: 20px 0px;
-            font-size: 1.2em;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: #f5e9e9;
+        #header div {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            bottom: -200px;
+            left: 50%;
         }
 
-        section {
-            padding: 50px 20vw;
+        #header div img {
+            width: 150px;
+            border-radius: 50%;
+            border: 2px solid var(--clr-secondary2);
         }
 
-        section h2 {
+        #header h1 {
+            color: var(--clr-white2);
+            font-size: 2.5rem;
+            margin-top: 70px;
+        }
+
+        #header h2 {
+            color: var(--clr-gray);
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        #header h3 {
+            color: var(--clr-secondary2);
+            font-size: 1.5rem;
+        }
+
+        #header h4 {
+            color: var(--clr-black4);
+            font-size: 1.5rem;
+        }
+
+        .desc {
+            color: var(--clr-black4);
+            text-align: center;
+            font-size: 1.6rem;
+            padding-top: 100px;
+        }
+
+        .desc * {
             margin-top: 40px;
-            margin-bottom: 20px;
         }
 
-        .check-list ul {
-            margin-right: 40px;
-            list-style: none;
-            font-size: 1.4em;
+        #outcome li {
+            margin-top: 10px;
         }
 
-        .check-list ul li {
-            margin-bottom: 30px;
-
-
+        .sec {
+            padding: 80px 100px;
+            line-height: 50px;
         }
 
-        .check-list ul li:before {
-            content: '✓';
-            font-weight: bolder;
-            margin-left: 10px;
-        }
-
-        section:nth-child(odd) {
-
-            background-color: #f9f9f9;
-        }
-
-        table {
-            padding: 20px;
-            font-size: 1.4em;
-            color: #2e2a2a;
+        .sec:nth-child(odd) {
+            background-color: var(--clr-white1);
 
         }
 
-        thead tr {
-            background-image: linear-gradient(230deg, #ffd3f1, #9372ff);
+        .sec:nth-child(even) {
+            background-color: var(--clr-white3);
         }
 
-        thead th {
-            padding: 20px;
-            font-size: 1.5em;
-            /* background-color: #ffd2ef; */
-
-            color: #272728;
-
-        }
-
-        tbody td,
-        tbody th {
-            padding: 20px;
-            text-align: right;
-
-        }
-
-        table tr {
-            background-color: #f1f1f1;
-        }
-
-        table caption {
-            font-size: 2em;
-            margin-top: 50px;
-            font-weight: bolder;
-            color: #4e4e4e;
-        }
-
-
-
-
-        input {
+        #table-of-content input {
             position: absolute;
             opacity: 0;
             z-index: -1;
@@ -157,7 +137,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-            width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -176,15 +156,15 @@
             display: flex;
             -webkit-box-pack: justify;
             justify-content: space-between;
-            padding: 25px;
+            padding: 15px;
             background: #7148f7;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 1.4rem;
         }
 
         .accordion-label:hover {
             background-image: linear-gradient(230deg, #e08dc6, #7855ed, #7855ed, #5E36E3, #5E36E3, #5E36E3);
-            
+
         }
 
         .accordion-label::after {
@@ -211,16 +191,16 @@
             font-size: 18px;
         }
 
-        input:checked+.accordion-label {
+        #table-of-content input:checked+.accordion-label {
             background: #562ae6;
         }
 
-        input:checked+.accordion-label::after {
+        #table-of-content input:checked+.accordion-label::after {
             -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
         }
 
-        input:checked~.accordion-content {
+        #table-of-content input:checked~.accordion-content {
             max-height: 100vh;
             padding: 16px;
         }
@@ -240,13 +220,14 @@
             line-height: 35px;
 
         }
-        a.btn {
+
+        .btn {
             text-decoration: none;
             display: block;
             width: fit-content;
             padding: 5px 20px;
-            background-color: #3f14d0;
-            color: white;
+            background-color: var(--clr-primary);
+            color: var(--clr-white1);
             font-size: 20px;
             font-weight: bold;
             margin: auto auto;
@@ -254,201 +235,320 @@
             text-align: center;
         }
 
-        a.btn:hover {
+        .btn:hover {
             background-image: linear-gradient(20deg, #ff81d3, #7855ed, #3f14d0, #3f14d0, #3f14d0);
         }
-    </style>
 
+        ul {
+            margin-top: 30px;
+            margin-right: 50px;
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        ul li:before {
+            content: '✓';
+            font-weight: bolder;
+            margin-left: 10px;
+        }
+
+
+        table {
+            padding: 20px;
+            font-size: 1.4rem;
+            color: #2e2a2a;
+            width: 100%;
+            margin: auto auto;
+
+        }
+
+        thead tr {
+            background-image: linear-gradient(230deg, #ffd3f1, #9372ff);
+        }
+
+        thead th {
+            padding: 20px;
+            font-size: 1.5rem;
+            /* background-color: #ffd2ef; */
+
+            color: #272728;
+
+        }
+
+        tbody td,
+        tbody th {
+            padding: 20px;
+            text-align: right;
+
+        }
+
+        table tr {
+            background-color: #f1f1f1;
+        }
+
+        table caption {
+            font-size: 2rem;
+            margin-top: 50px;
+            font-weight: bolder;
+            color: #4e4e4e;
+        }
+
+        @media (max-width: 700px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .sec {
+                padding: 50px 20px;
+                line-height: 40px;
+            }
+
+            ul {
+                margin: 20px 10px;
+            }
+        }
+        form{
+                max-width: 600px ; 
+                margin:auto auto; 
+                display:flex; 
+                flex-direction: column ;
+                font-size: 1.4rem;
+                padding: 40px 40px;
+                background-color: rgb(65, 53, 53);
+                border-radius: 5px;
+                color: var(--clr-white2);
+            }
+            form input, select{
+                border: none;
+                font-size: 2rem;
+                text-decoration: none;
+                display: inline-block;
+                padding: 15px 10px;
+                color: var(--clr-black5);
+            }
+            form > *{
+                margin-top: 20px;
+            }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1 style="margin-top: 50px; font-size: 2.5em;">دبلوم تصميم وبرمجة تطبيقات الوب</h1>
+
+
+
+    <section id="header">
+        <img src="img/logo.png" id="logo">
+        <h1>دبلوم تصميم وبرمجة تطبيقات الوب</h1>
         <h2>
             دورة شاملة وممتعة وعملية للغاية تؤهلك للوظيفة والعمل الخاص
         </h2>
-        <img src="img/logo.png" alt="" class="logo">
-        <div class="instructor">
+        <div>
             <h3>المدرب</h3>
             <img src="img/alqmase-alqumasi.jpg" alt="">
             <h4>محمد القُماسي</ا>
         </div>
-    </header>
-    <main>
-        <section class="p">
+    </section>
+
+
+
+    <section class="sec desc" id="instructor">
+        <br>
+        <p>
             مرحباً! اسمي محمد القُماسي. أنا مهندس برمجيات بخبرة ما يقارب عشر سنوات، ولقد علمت مئات الطلاب والموظفين
             كيفية
-            البرمجة وكيف يصبحون مهندسي برمجيات محترفين من خلال الدورات التدريبية المباشره، وكذلك عبر الإنترنت. محمد القماسي حاصل على درجة الماجستير في علوم الحاسوب من جامعة الملك فهد للبترول والمعادن
-            <a href="https://alqmase.github.io" target="_blank" class="btn" style="font-size: 20px ; padding: 5px 20px; margin-top: 50px; ">
-                اقرأ المزيد عن المدرب
-            </a>
-        </section>
-
-        <section class="check-list">
-            <h2>
-                في هذا الدبلوم سوف تتعلم اللغات والتقنيات التاليه:
-            </h2>
-            <ul>
-                <li>HTML5 <img src="img/HTML5.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>CSS3 <img src="img/css3.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Javascript <img src="img/javascript.png" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>JQuery <img src="img/jquery-vertical.png" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Bootstrap-5<img src="img/Bootstrap.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>MySQL<img src="img/mysql.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>PHP-8 <img src="img/PHP.svg" height="25" style="margin-right: 5px;" alt=""></li>
-
-                <li>PHP OOP Fundamentals <img src="img/oop.png" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>PHP MVC Framework <img src="img/MVC.png" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Laravel Fundamentals <img src="img/laravel-2.svg" height="25" style="margin-right: 5px;" alt="">
-                </li>
-                <li>Wordpress Fundamentals <img src="img/wordpress-icon.svg" height="25" style="margin-right: 5px;"
-                        alt=""></li>
-            </ul>
+            البرمجة وكيف يصبحون مهندسي برمجيات محترفين من خلال الدورات التدريبية المباشره، وكذلك عبر الإنترنت. محمد
+            القماسي حاصل على درجة الماجستير في علوم الحاسوب من جامعة الملك فهد للبترول والمعادن
+        </p>
+        <br>
+        <a href="https://alqmase.github.io" target="_blank" class="btn">
+            اقرأ المزيد عن المدرب
+        </a>
+    </section>
 
 
-        </section>
-        <section class="check-list">
 
-            <h2>
-                وكذالك سوف تكتسب المهاره الكافيه للتعامل معا الاتي:
-            </h2>
-            <ul>
-                <li>Git and Github <img src="img/github.jpg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>VSCode <img src="img/vscode.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Canva.com <img src="img/canva.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Opening bank account <img src="img/visa_card.png" height="25" style="margin-right: 5px;" alt="">
-                </li>
-                <li>Purchasing Domain and Hosting <img src="img/domain48.png" height="25" style="margin-right: 5px;"
-                        alt=""> <img src="img/hostinger.svg" height="25" style="margin-right: 5px;" alt=""></li>
-                <li>Register as freelancer <img src="img/freelance-work.png" height="25" style="margin-right: 5px;"
-                        alt=""></li>
-                <li>Digital marketing <img src="img/digitalMarketing.png" height="25" style="margin-right: 5px;" alt="">
-                </li>
-                <li>Google AdSense <img src="img/google_adsense.svg" height="25" style="margin-right: 5px;" alt=""></li>
-            </ul>
-        </section>
-        <section class="check-list">
-            <h2>
-                بنهاية هذا الدبلوم ، ستكون قادرًا على:
-            </h2>
+    <section class="sec " id="outline">
+        <h2>
+            في هذا الدبلوم سوف تتعلم اللغات والتقنيات التاليه:
+        </h2>
+        <ul>
+            <li>HTML5 <img src="img/HTML5.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>CSS3 <img src="img/css3.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Javascript <img src="img/javascript.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>JQuery <img src="img/jquery-vertical.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Bootstrap-5<img src="img/Bootstrap.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>MySQL<img src="img/mysql.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>PHP-8 <img src="img/PHP.svg" height="25" style="margin-right: 5px;" alt=""></li>
 
-            <ul style="text-align: justify; line-height:30px ; font-size: 1.3em;">
-                <li>
-                    القدرة على تصميم صفحات الويب بحيث تبدو رائعة على أي شاشة أو جهاز.
-                </li>
-                <li>
-                    القدرة على استخدام أدوات تصميم الصور والشعارات، الخاصة بصفحة الوب.
-                </li>
-                <li>
-                    استكشاف المشكلات وإصلاحها مثل المحترفين.
-                </li>
-                <li>
-                    القدرة على تحسين صفحات الوب باستخدام JavaScript وجعلها أكثر تفاعيله معا المستخدم.
-                </li>
-                <li>
-                    القدرة على استخدام JQuery في تسهل البرمجة بلغة ال Javascript
-                </li>
-                <li>
-                    القدرة على تصميم موقع كامل باستخدام ال Bootstrap
-                </li>
-                <li>
-                    القدرة على استخدام ال Ajax لإرسال واستقبال البيانات إلى السيرفر ، وإظهارها في الصفحة.
-                </li>
-                <li>
-                    القدرة على بناء قاعدة بيانات، والتعامل معها في تخزين واسترجاع البيانات.
-                </li>
-                <li>
-                    القدرة على كتابة كود نظيف مثل المحترفين.
-                </li>
-                <li>
-                    القدرة على بناء واختبار ونشر تطبيقات PHP بكل ثقة
-                </li>
-                <li>
-                    القدرة على استخدام Git و GitHub للتعاون مع المطورين الآخرين بسهولة.
-                </li>
-                <li>
-                    القدرة على التعامل معا التهديدات الضارة بالموقع، وتهديدات الاختراق، وسد الثغرات، والتعامل معا
-                    التهديدات التالية: Query String Attack، Bypass Restriction Attack، Cookies Attack، Hidden Field
-                    Attack، URL Jumping Attack، CSRF Attack، XSS Attack، Session Hijacking، SQL Injection، Directory
-                    Traversal Attack.
-                </li>
-                <li>
-                    نشر مواقع الويب الخاصة بك على السحابة، وإدارته، واستخدامها في الربح الإلكتروني.
-                </li>
-                <li>
-                    القدره على التعامل معا MVC Frameworks
-                </li>
-                <li>
-                    القدره على بناء تطبيق بسيط بإستخدم Laravel Framework
-                </li>
-                <li>
-                    القدره على بناء تطبيق بسيط بإستخدام WordPress
-                </li>
-            </ul>
-        </section>
-        <section class="p">
-            <h2 style="text-align: center;" dir="ltr">
-                30-Hours Money-Back Guarantee
-            </h2>
-            <p>
-                جربها بدون مخاطره – انسحب في اي وقت - ضمان استرداد فلوسك بالكامل- نحن على ثقه من أنك ستحصل على كل ما
-                تحتاجه من هذه الدورة، وستكون راضيًا بنسبة 100٪. ولكن في حالة غير محتملة ، قررت أن الأمر ليس كذلك ، فما
-                عليك سوى طلب استرداد الأموال في أي وقت خلال فتره الانسحاب المسموح بها - مسموح لك 30 ساعة تدريب تجريبيه،
-                وبعد الفتره التجريبيه يخصم دولار عن كل ساعه تدريبيه - بعد هذا العرض ماذا تنتظر، سجل الان!
-            </p>
-        </section>
+            <li>PHP OOP Fundamentals <img src="img/oop.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>PHP MVC Frameworks <img src="img/MVC.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Laravel Fundamentals <img src="img/laravel-2.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Wordpress Fundamentals <img src="img/wordpress-icon.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+        </ul>
+    </section>
 
-        <section>
-            <table>
-                <caption>معلومات التسجيل </caption>
-                <thead>
-                    <tr>
-                        <th>العنوان</th>
-                        <th>الوصف</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>العدد</th>
-                        <td>15 متدرب</td>
-                    </tr>
-                    <tr>
-                        <th> وقت المجموعة الاولى</th>
-                        <td>2:00-4:00 عصراً – ثابت لا يتغير</td>
-                    </tr>
-                    <tr>
-                        <th> وقت المجموعة الثانيه</th>
-                        <td>4:00-6:00 عصراً – ثابت لا يتغير</td>
-                    </tr>
-                    <tr>
-                        <th>السعر</th>
-                        <td><strong style="color: red ;">120 دولار</strong> - الدفع كامل قبل الدوره</td>
-                    </tr>
-                    <tr>
-                        <th>عدد ساعات التدريب</th>
-                        <td>100 ساعه تدريبيه - ساعتين يومياً - خمسه ايام في الاسبوع.</td>
-                    </tr>
-                    <tr>
-                        <th>المكان</th>
-                        <td>نقدم الدوره بالتنسيق معا شركائنا، حالياً شارع بغداد، امام المكتبه الجديده، صنعاء</td>
-                    </tr>
-                    <tr>
-                        <th>المتطلبات</th>
-                        <td>أحضر جهازك معك</td>
-                    </tr>
-                    <tr>
-                        <th>تبدأ</th>
-                        <td>بعد اكتمال العدد</td>
-                    </tr>
-                    <tr>
-                        <th>للتواصل</th>
-                        <td> 773091139 </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
-        <section>
+    <section class="sec " id="skills">
+
+        <h2>
+            وكذالك سوف تكتسب المهاره الكافيه للتعامل معا الاتي:
+        </h2>
+        <ul>
+            <li>Git and Github <img src="img/github.jpg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>VSCode <img src="img/vscode.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Canva.com <img src="img/canva.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Opening bank account <img src="img/visa_card.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Purchasing Domain and Hosting <img src="img/domain48.png" height="25" style="margin-right: 5px;" alt="">
+                <img src="img/hostinger.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Register as freelancer <img src="img/freelance-work.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Digital marketing <img src="img/digitalMarketing.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Google AdSense <img src="img/google_adsense.svg" height="25" style="margin-right: 5px;" alt=""></li>
+        </ul>
+    </section>
+
+
+
+    <section class="sec " id="outcome">
+        <h2>
+            بنهاية هذا الدبلوم ، ستكون قادرًا على:
+        </h2>
+
+        <ul style="text-align: justify; line-height:30px ; font-size: 1.3em;">
+            <li>
+                القدرة على تصميم صفحات الويب بحيث تبدو رائعة على أي شاشة أو جهاز.
+            </li>
+            <li>
+                القدرة على استخدام أدوات تصميم الصور والشعارات، الخاصة بصفحة الوب.
+            </li>
+            <li>
+                استكشاف المشكلات وإصلاحها مثل المحترفين.
+            </li>
+            <li>
+                القدرة على تحسين صفحات الوب باستخدام JavaScript وجعلها أكثر تفاعيله معا المستخدم.
+            </li>
+            <li>
+                القدرة على استخدام JQuery في تسهل البرمجة بلغة ال Javascript
+            </li>
+            <li>
+                القدرة على تصميم موقع كامل باستخدام ال Bootstrap
+            </li>
+            <li>
+                القدرة على استخدام ال Ajax لإرسال واستقبال البيانات إلى السيرفر ، وإظهارها في الصفحة.
+            </li>
+            <li>
+                القدرة على بناء قاعدة بيانات، والتعامل معها في تخزين واسترجاع البيانات.
+            </li>
+            <li>
+                القدرة على كتابة كود نظيف مثل المحترفين.
+            </li>
+            <li>
+                القدرة على بناء واختبار ونشر تطبيقات PHP بكل ثقة
+            </li>
+            <li>
+                القدرة على استخدام Git و GitHub للتعاون مع المطورين الآخرين بسهولة.
+            </li>
+            <li>
+                القدرة على التعامل معا التهديدات الضارة بالموقع، وتهديدات الاختراق، وسد الثغرات، والتعامل معا
+                التهديدات التالية: Query String Attack، Bypass Restriction Attack، Cookies Attack، Hidden Field
+                Attack، URL Jumping Attack، CSRF Attack، XSS Attack، Session Hijacking، SQL Injection، Directory
+                Traversal Attack.
+            </li>
+            <li>
+                نشر مواقع الويب الخاصة بك على السحابة، وإدارته، واستخدامها في الربح الإلكتروني.
+            </li>
+            <li>
+                القدره على التعامل معا MVC Frameworks
+            </li>
+            <li>
+                القدره على بناء تطبيق بسيط بإستخدم Laravel Framework
+            </li>
+            <li>
+                القدره على بناء تطبيق بسيط بإستخدام WordPress
+            </li>
+        </ul>
+    </section>
+
+
+
+    <section class="sec desc" id="monayback">
+        <h2 dir="ltr">
+            30-Hours Money-Back Guarantee
+        </h2>
+        <p>
+            جربها بدون مخاطره – انسحب في اي وقت - ضمان استرداد فلوسك بالكامل- نحن على ثقه من أنك ستحصل على كل ما
+            تحتاجه من هذه الدورة، وستكون راضيًا بنسبة 100٪. ولكن في حالة غير محتملة ، قررت أن الأمر ليس كذلك ، فما
+            عليك سوى طلب استرداد الأموال في أي وقت خلال فتره الانسحاب المسموح بها - مسموح لك 30 ساعة تدريب تجريبيه،
+            وبعد الفتره التجريبيه يخصم دولار عن كل ساعه تدريبيه - بعد هذا العرض ماذا تنتظر، سجل الان!
+        </p>
+        <a href="#register-form" class="btn">
+            سجل الآن
+        </a>
+    </section>
+    <section class="sec " id="register-info">
+        <table>
+            <caption>معلومات التسجيل </caption>
+            <thead>
+                <tr>
+                    <th>العنوان</th>
+                    <th>الوصف</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>العدد</th>
+                    <td>15 متدرب</td>
+                </tr>
+                <tr>
+                    <th> وقت المجموعة الاولى</th>
+                    <td>2:00-4:00 عصراً – ثابت لا يتغير</td>
+                </tr>
+                <tr>
+                    <th> وقت المجموعة الثانيه</th>
+                    <td>4:00-6:00 عصراً – ثابت لا يتغير</td>
+                </tr>
+                <tr>
+                    <th>السعر</th>
+                    <td><strong style="color: red ;">150 دولار</strong> - الدفع كامل قبل الدوره</td>
+                </tr>
+                <tr>
+                    <th>عدد ساعات التدريب</th>
+                    <td>100 ساعه تدريبيه - ساعتين يومياً - خمسه ايام في الاسبوع.</td>
+                </tr>
+                <tr>
+                    <th>عدد التمارين</th>
+                    <td>أكثر من 150 تمرين</td>
+                </tr>
+                <tr>
+                    <th>المكان</th>
+                    <td>نقدم الدوره بالتنسيق معا شركائنا، حالياً شارع بغداد، امام المكتبه الجديده، صنعاء</td>
+                </tr>
+                <tr>
+                    <th>المتطلبات</th>
+                    <td>أحضر جهازك معك</td>
+                </tr>
+                <tr>
+                    <th>تبدأ</th>
+                    <td>بعد اكتمال العدد</td>
+                </tr>
+                <tr>
+                    <th>للتواصل</th>
+                    <td> 773091139 </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#register-form" class="btn">
+            سجل الآن
+        </a>
+    </section>
+    <section class="" id="table-of-content">
+        <br>
+        <div class="sec " id="html">
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ HTML</h2>
                 <img src="img/HTML5.svg" width="75" alt="">
@@ -565,9 +665,11 @@
 
 
             </div>
-        </section>
+        </div>
 
-        <section>
+
+
+        <div class="sec " id="css">
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ CSS</h2>
                 <img src="img/css3.svg" width="75" alt="">
@@ -837,9 +939,12 @@
 
 
             </div>
-        </section>
 
-        <section>
+        </div>
+
+
+
+        <div class="sec " id="js">
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ JavaScript</h2>
                 <img src="img/javascript.png" width="75" alt="">
@@ -950,9 +1055,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section>
+
+
+        <div class="sec " id="jquery">
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ JQuery</h2>
                 <img src="img/jquery-vertical.png" width="75" alt="">
@@ -1007,10 +1114,11 @@
 
 
             </div>
-        </section>
+        </div>
 
 
-        <section>
+        <div class="sec " id="bootstrap">
+
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ Bootstrap</h2>
                 <img src="img/Bootstrap.svg" width="75" alt="">
@@ -1124,9 +1232,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section>
+
+
+        <div class="sec " id="php">
             <div style="text-align: center; font-size: 1.2em;">
                 <h2>جدول المحتويات للغة الــ MySQL and PHP</h2>
                 <img src="img/mysql.svg" width="75" alt="">
@@ -1392,11 +1502,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section>
+
+
+        <div class="sec " id="advance">
             <div style="text-align: center; font-size: 1.2em;">
-                <h2>جدول المحتويات لدروسه متقدمه </h2>
+                <h2>جدول المحتويات المتعلق بالدروس المتقدمة </h2>
                 <img src="img/laravel-2.svg" width="75" alt="">
                 <img src="img/wordpress-icon.svg" width="75" alt="">
             </div>
@@ -1545,12 +1657,57 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <section class="sec desc" style="padding:30px; margin:0px">
+        <h2>سجل الآن</h2>
+    </section>
+    <section class="sec" id="register-form">
+        <h2 style="text-align: center;">للتسجيل يُرجى تعبئة النموذج وسوف نتواصل معك</h2>
+        <form action="https://computing-school.000webhostapp.com/training/php-training.php" method="post">
+            <input type="hidden" name="form" value="traning-register">
+            <input type="text" name="name" id="" placeholder="الاسم الثلاثي">
+            <input type="email" name="email" id="" placeholder="الايميل">
+            <input type="number" name="mobile" id="" placeholder="رقم الجوال">
+            <div>
+                <h3 style="display: inline;">الحاله العلمية</h3>
+                <select name="eduction" id="">
+                    <option value="1">خريج جامعي</option>
+                    <option value="2">طالب جامعي</option>
+                    <option value="3">خريج ثانوية عامه</option>
+                    <option value="4">شيء آخر</option>
+                </select>
+            </div>
+            <div>
+                <h3>الحالة الوظيفية</h3>
+                <div style="display: inline;">
+                    <input type="radio" name="job" value="1" id="has-job">
+                    <label for="has-job">موظف</label>
+                </div>
 
-    </main>
-    <footer>
+                <div style="display: inline-block; margin-right: 20px;">
+                    <input type="radio" name="job" value="2" id="no-job">
+                    <label for="no-job">غير موظف</label>
+                </div>
+            </div>
+            <div>
+                <h3>الوقت المناسب لك</h3>
+               <div style="margin-right: 20px;">
+                <div  style="display: inline-block; ">
+                    <input type="radio" name="time" value="1" id="time1">
+                    <label for="time1">2:00-4:00 عصراً</label>
+                </div>
 
-    </footer>
+                <div  style="display: inline-block; margin-right: 20px;">
+                    <input type="radio" name="time" value="2" id="time2">
+                    <label for="time1">4:00-6:00 عصراً</label>
+                </div>
+               </div>
+                
+            </div>
+            <input style="margin-top:20px; font-size:2rem; border: none; padding:10px 30px; cursor: pointer;" type="submit" value="ارسال" class="btn" >
+        </form>
+    </section>
 </body>
 
 </html>
