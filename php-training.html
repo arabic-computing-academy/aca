@@ -307,28 +307,44 @@
                 margin: 20px 10px;
             }
         }
-        form{
-                max-width: 600px ; 
-                margin:auto auto; 
-                display:flex; 
-                flex-direction: column ;
-                font-size: 1.4rem;
-                padding: 40px 40px;
-                background-color: rgb(65, 53, 53);
-                border-radius: 5px;
-                color: var(--clr-white2);
-            }
-            form input, select{
-                border: none;
-                font-size: 2rem;
-                text-decoration: none;
-                display: inline-block;
-                padding: 15px 10px;
-                color: var(--clr-black5);
-            }
-            form > *{
-                margin-top: 20px;
-            }
+
+        form {
+            max-width: 600px;
+            margin: auto auto;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.4rem;
+            padding: 40px 40px;
+            background-color: rgb(65, 53, 53);
+            border-radius: 5px;
+            color: var(--clr-white2);
+        }
+
+        form input,
+        select {
+            border: none;
+            font-size: 2rem;
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 10px;
+            color: var(--clr-black5);
+        }
+
+        form>* {
+            margin-top: 20px;
+        }
+
+        input[type="radio"] {
+            /* appearance: none; */
+            background-color: #fff;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.1em;
+            height: 1.1em;
+            border: 0.1em solid currentColor;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -1694,20 +1710,21 @@
             </div>
             <div>
                 <h3>الوقت المناسب لك</h3>
-               <div style="margin-right: 20px;">
-                <div  style="display: inline-block; ">
-                    <input type="radio" name="time" value="1" id="time1">
-                    <label for="time1">2:00-4:00 عصراً</label>
+                <div style="margin-right: 20px;">
+                    <div style="display: inline-block; ">
+                        <input type="radio" name="time" value="1" id="time1">
+                        <label for="time1">2:00-4:00 عصراً</label>
+                    </div>
+
+                    <div style="display: inline-block; margin-right: 20px;">
+                        <input type="radio" name="time" value="2" id="time2">
+                        <label for="time1">4:00-6:00 عصراً</label>
+                    </div>
                 </div>
 
-                <div  style="display: inline-block; margin-right: 20px;">
-                    <input type="radio" name="time" value="2" id="time2">
-                    <label for="time1">4:00-6:00 عصراً</label>
-                </div>
-               </div>
-                
             </div>
-            <input style="margin-top:20px; font-size:2rem; border: none; padding:10px 30px; cursor: pointer;" type="submit" value="ارسال" class="btn" >
+            <input style="margin-top:20px; font-size:2rem; border: none; padding:10px 30px; cursor: pointer;"
+                type="submit" value="ارسال" class="btn">
         </form>
     </section>
 
@@ -1715,7 +1732,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         for (const [key, value] of urlParams) {
             if (key === 'msg') {
-                document.getElementById('msg').style.display='block';
+                document.getElementById('msg').style.display = 'block';
                 document.getElementById('msg').innerHTML = '<p style=" padding:10px 30px; background-color: #7ae57a; color: black; border-radius: 5px;  ">تم الارسال بنجاح</p>';
             }
         }
