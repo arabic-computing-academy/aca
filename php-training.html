@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-Academy </title>
+    <link rel="icon" type="image/x-icon" href="img/students.svg">
+    <style>
+        :root {
+            --clr-primary: #5e36e3;
+            --clr-secondary: #ff81d3;
+            --clr-secondary2: #ffc4c4;
+            --clr-white1: #fff;
+            --clr-white2: #f0f8ff;
+            --clr-white3: #f5f5f5;
+            --clr-gray: #f5e9e9;
+            --clr-black1: #000;
+            --clr-black2: #2e2a2a;
+            --clr-black3: #272728;
+            --clr-black4: #322828;
+            --clr-black5: #4e4e4e;
+            --clr-darkblue1: #031a2a;
+            --clr-darkblue2: #012239b3;
+            --grd: linear-gradient(50deg, #ff81d3, #7855ed, #5e36e3);
+            --grd-hover: linear-gradient(20deg, #ff81d3, #7855ed, #3f14d0, #3f14d0, #3f14d0);
+            --ff-ar-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-ar-text: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-en-title: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            --ff-en-text: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--ff-ar-text);
+        }
+
+        #header {
+            height: 400px;
+            width: 100%;
+            background-image: var(--grd);
+            position: relative;
+            text-align: center;
+            padding-top: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #header #logo {
+            position: absolute;
+            right: 30px;
+            width: 80px;
+            border-radius: 50%;
+            top: 20px;
+            box-shadow: 5px 5px 30px var(--clr-secondary2);
+        }
+
+        #header div {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            bottom: -200px;
+            left: 50%;
+        }
+
+        #header div img {
+            width: 150px;
+            border-radius: 50%;
+            border: 2px solid var(--clr-secondary2);
+        }
+
+        #header h1 {
+            color: var(--clr-white2);
+            font-size: 2.5rem;
+            margin-top: 70px;
+        }
+
+        #header h2 {
+            color: var(--clr-gray);
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        #header h3 {
+            color: var(--clr-secondary2);
+            font-size: 1.5rem;
+        }
+
+        #header h4 {
+            color: var(--clr-black4);
+            font-size: 1.5rem;
+        }
+
+        .desc {
+            color: var(--clr-black4);
+            text-align: center;
+            font-size: 1.6rem;
+            padding-top: 100px;
+        }
+
+        .desc * {
+            margin-top: 40px;
+        }
+
+        #outcome li {
+            margin-top: 10px;
+        }
+
+        .sec {
+            padding: 80px 100px;
+            line-height: 50px;
+        }
+
+        .sec:nth-child(odd) {
+            background-color: var(--clr-white1);
+
+        }
+
+        .sec:nth-child(even) {
+            background-color: var(--clr-white3);
+        }
+
+        #table-of-content input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .accordion-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .accordion {
+            width: 100%;
+            color: white;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .accordion:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-label {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            padding: 15px;
+            background: #7148f7;
+            cursor: pointer;
+            font-size: 1.4rem;
+        }
+
+        .accordion-label:hover {
+            background-image: linear-gradient(230deg, #e08dc6, #7855ed, #7855ed, #5E36E3, #5E36E3, #5E36E3);
+
+        }
+
+        .accordion-label::after {
+            content: "\276F";
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            padding: 0 16px;
+            color: #031a2a;
+            background: white;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: #012239b3;
+            font-size: 18px;
+        }
+
+        #table-of-content input:checked+.accordion-label {
+            background: #562ae6;
+        }
+
+        #table-of-content input:checked+.accordion-label::after {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        #table-of-content input:checked~.accordion-content {
+            max-height: 100vh;
+            padding: 16px;
+        }
+
+        .lesson {
+            color: #ffc4c4;
+            font-weight: bolder;
+        }
+
+        .accordion-content ul li {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .accordion-content ul {
+            margin: 20px 40px;
+            font-size: 1.1em;
+            line-height: 35px;
+
+        }
+
+        .btn {
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            padding: 5px 20px;
+            background-color: var(--clr-primary);
+            color: var(--clr-white1);
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto auto;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-image: linear-gradient(20deg, #ff81d3, #7855ed, #3f14d0, #3f14d0, #3f14d0);
+        }
+
+        ul {
+            margin-top: 30px;
+            margin-right: 50px;
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        ul li:before {
+            content: '✓';
+            font-weight: bolder;
+            margin-left: 10px;
+        }
+
+
+        table {
+            padding: 20px;
+            font-size: 1.4rem;
+            color: #2e2a2a;
+            width: 100%;
+            margin: auto auto;
+
+        }
+
+        thead tr {
+            background-image: linear-gradient(230deg, #ffd3f1, #9372ff);
+        }
+
+        thead th {
+            padding: 20px;
+            font-size: 1.5rem;
+            /* background-color: #ffd2ef; */
+
+            color: #272728;
+
+        }
+
+        tbody td,
+        tbody th {
+            padding: 20px;
+            text-align: right;
+
+        }
+
+        table tr {
+            background-color: #f1f1f1;
+        }
+
+        table caption {
+            font-size: 2rem;
+            margin-top: 50px;
+            font-weight: bolder;
+            color: #4e4e4e;
+        }
+
+        @media (max-width: 700px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .sec {
+                padding: 50px 20px;
+                line-height: 40px;
+            }
+
+            ul {
+                margin: 20px 10px;
+            }
+        }
+        form{
+                max-width: 600px ; 
+                margin:auto auto; 
+                display:flex; 
+                flex-direction: column ;
+                font-size: 1.4rem;
+                padding: 40px 40px;
+                background-color: rgb(65, 53, 53);
+                border-radius: 5px;
+                color: var(--clr-white2);
+            }
+            form input, select{
+                border: none;
+                font-size: 2rem;
+                text-decoration: none;
+                display: inline-block;
+                padding: 15px 10px;
+                color: var(--clr-black5);
+            }
+            form > *{
+                margin-top: 20px;
+            }
+    </style>
+</head>
+
+<body>
+
+
+
+    <section id="header">
+        <img src="img/logo.png" id="logo">
+        <h1>دبلوم تصميم وبرمجة تطبيقات الوب</h1>
+        <h2>
+            دورة شاملة وممتعة وعملية للغاية تؤهلك للوظيفة والعمل الخاص
+        </h2>
+        <div>
+            <h3>المدرب</h3>
+            <img src="img/alqmase-alqumasi.jpg" alt="">
+            <h4>محمد القُماسي</ا>
+        </div>
+    </section>
+
+
+
+    <section class="sec desc" id="instructor">
+        <br>
+        <p>
+            مرحباً! اسمي محمد القُماسي. أنا مهندس برمجيات بخبرة ما يقارب عشر سنوات، ولقد علمت مئات الطلاب والموظفين
+            كيفية
+            البرمجة وكيف يصبحون مهندسي برمجيات محترفين من خلال الدورات التدريبية المباشره، وكذلك عبر الإنترنت. محمد
+            القماسي حاصل على درجة الماجستير في علوم الحاسوب من جامعة الملك فهد للبترول والمعادن
+        </p>
+        <br>
+        <a href="https://alqmase.github.io" target="_blank" class="btn">
+            اقرأ المزيد عن المدرب
+        </a>
+    </section>
+
+
+
+    <section class="sec " id="outline">
+        <h2>
+            في هذا الدبلوم سوف تتعلم اللغات والتقنيات التاليه:
+        </h2>
+        <ul>
+            <li>HTML5 <img src="img/HTML5.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>CSS3 <img src="img/css3.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Javascript <img src="img/javascript.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>JQuery <img src="img/jquery-vertical.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Bootstrap-5<img src="img/Bootstrap.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>MySQL<img src="img/mysql.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>PHP-8 <img src="img/PHP.svg" height="25" style="margin-right: 5px;" alt=""></li>
+
+            <li>PHP OOP Fundamentals <img src="img/oop.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>PHP MVC Frameworks <img src="img/MVC.png" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Laravel Fundamentals <img src="img/laravel-2.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Wordpress Fundamentals <img src="img/wordpress-icon.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+        </ul>
+    </section>
+
+
+    <section class="sec " id="skills">
+
+        <h2>
+            وكذالك سوف تكتسب المهاره الكافيه للتعامل معا الاتي:
+        </h2>
+        <ul>
+            <li>Git and Github <img src="img/github.jpg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>VSCode <img src="img/vscode.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Canva.com <img src="img/canva.svg" height="25" style="margin-right: 5px;" alt=""></li>
+            <li>Opening bank account <img src="img/visa_card.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Purchasing Domain and Hosting <img src="img/domain48.png" height="25" style="margin-right: 5px;" alt="">
+                <img src="img/hostinger.svg" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Register as freelancer <img src="img/freelance-work.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Digital marketing <img src="img/digitalMarketing.png" height="25" style="margin-right: 5px;" alt="">
+            </li>
+            <li>Google AdSense <img src="img/google_adsense.svg" height="25" style="margin-right: 5px;" alt=""></li>
+        </ul>
+    </section>
+
+
+
+    <section class="sec " id="outcome">
+        <h2>
+            بنهاية هذا الدبلوم ، ستكون قادرًا على:
+        </h2>
+
+        <ul style="text-align: justify; line-height:30px ; font-size: 1.3em;">
+            <li>
+                القدرة على تصميم صفحات الويب بحيث تبدو رائعة على أي شاشة أو جهاز.
+            </li>
+            <li>
+                القدرة على استخدام أدوات تصميم الصور والشعارات، الخاصة بصفحة الوب.
+            </li>
+            <li>
+                استكشاف المشكلات وإصلاحها مثل المحترفين.
+            </li>
+            <li>
+                القدرة على تحسين صفحات الوب باستخدام JavaScript وجعلها أكثر تفاعيله معا المستخدم.
+            </li>
+            <li>
+                القدرة على استخدام JQuery في تسهل البرمجة بلغة ال Javascript
+            </li>
+            <li>
+                القدرة على تصميم موقع كامل باستخدام ال Bootstrap
+            </li>
+            <li>
+                القدرة على استخدام ال Ajax لإرسال واستقبال البيانات إلى السيرفر ، وإظهارها في الصفحة.
+            </li>
+            <li>
+                القدرة على بناء قاعدة بيانات، والتعامل معها في تخزين واسترجاع البيانات.
+            </li>
+            <li>
+                القدرة على كتابة كود نظيف مثل المحترفين.
+            </li>
+            <li>
+                القدرة على بناء واختبار ونشر تطبيقات PHP بكل ثقة
+            </li>
+            <li>
+                القدرة على استخدام Git و GitHub للتعاون مع المطورين الآخرين بسهولة.
+            </li>
+            <li>
+                القدرة على التعامل معا التهديدات الضارة بالموقع، وتهديدات الاختراق، وسد الثغرات، والتعامل معا
+                التهديدات التالية: Query String Attack، Bypass Restriction Attack، Cookies Attack، Hidden Field
+                Attack، URL Jumping Attack، CSRF Attack، XSS Attack، Session Hijacking، SQL Injection، Directory
+                Traversal Attack.
+            </li>
+            <li>
+                نشر مواقع الويب الخاصة بك على السحابة، وإدارته، واستخدامها في الربح الإلكتروني.
+            </li>
+            <li>
+                القدره على التعامل معا MVC Frameworks
+            </li>
+            <li>
+                القدره على بناء تطبيق بسيط بإستخدم Laravel Framework
+            </li>
+            <li>
+                القدره على بناء تطبيق بسيط بإستخدام WordPress
+            </li>
+        </ul>
+    </section>
+
+
+
+    <section class="sec desc" id="monayback">
+        <h2 dir="ltr">
+            30-Hours Money-Back Guarantee
+        </h2>
+        <p>
+            جربها بدون مخاطره – انسحب في اي وقت - ضمان استرداد فلوسك بالكامل- نحن على ثقه من أنك ستحصل على كل ما
+            تحتاجه من هذه الدورة، وستكون راضيًا بنسبة 100٪. ولكن في حالة غير محتملة ، قررت أن الأمر ليس كذلك ، فما
+            عليك سوى طلب استرداد الأموال في أي وقت خلال فتره الانسحاب المسموح بها - مسموح لك 30 ساعة تدريب تجريبيه،
+            وبعد الفتره التجريبيه يخصم دولار عن كل ساعه تدريبيه - بعد هذا العرض ماذا تنتظر، سجل الان!
+        </p>
+        <a href="#register-form" class="btn">
+            سجل الآن
+        </a>
+    </section>
+    <section class="sec " id="register-info">
+        <table>
+            <caption>معلومات التسجيل </caption>
+            <thead>
+                <tr>
+                    <th>العنوان</th>
+                    <th>الوصف</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>العدد</th>
+                    <td>15 متدرب</td>
+                </tr>
+                <tr>
+                    <th> وقت المجموعة الاولى</th>
+                    <td>2:00-4:00 عصراً – ثابت لا يتغير</td>
+                </tr>
+                <tr>
+                    <th> وقت المجموعة الثانيه</th>
+                    <td>4:00-6:00 عصراً – ثابت لا يتغير</td>
+                </tr>
+                <tr>
+                    <th>السعر</th>
+                    <td><strong style="color: red ;">150 دولار</strong> - الدفع كامل قبل الدوره</td>
+                </tr>
+                <tr>
+                    <th>عدد ساعات التدريب</th>
+                    <td>100 ساعه تدريبيه - ساعتين يومياً - خمسه ايام في الاسبوع.</td>
+                </tr>
+                <tr>
+                    <th>عدد التمارين</th>
+                    <td>أكثر من 150 تمرين</td>
+                </tr>
+                <tr>
+                    <th>المكان</th>
+                    <td>نقدم الدوره بالتنسيق معا شركائنا، حالياً شارع بغداد، امام المكتبه الجديده، صنعاء</td>
+                </tr>
+                <tr>
+                    <th>المتطلبات</th>
+                    <td>أحضر جهازك معك</td>
+                </tr>
+                <tr>
+                    <th>تبدأ</th>
+                    <td>بعد اكتمال العدد</td>
+                </tr>
+                <tr>
+                    <th>للتواصل</th>
+                    <td> 773091139 </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#register-form" class="btn">
+            سجل الآن
+        </a>
+    </section>
+    <section class="" id="table-of-content">
+        <br>
+        <div class="sec " id="html">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ HTML</h2>
+                <img src="img/HTML5.svg" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check1">
+                    <label class="accordion-label" for="check1">
+                        <span><span class="lesson">Lesson 1:</span> HTML Syntax and Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Understand syntax and basic structure </li>
+                            <li>Use head elements</li>
+                            <li>Use &lt;img&gt;, &lt;p&gt;, elements</li>
+                            <li>Install VSCode</li>
+                            <li>Install the required VSCode extensions</li>
+                            <li>Use &lt;h1&gt;-&lt;h6&gt; elements</li>
+                            <li>Use lang and dir attributes</li>
+                            <li>Use list elements</li>
+                            <li>Use table elements</li>
+                            <li>Build project 01</li>
+                        </ul>
+
+                        <a href="https://youtu.be/dnrCBpCYAQI" target="_blank" class="btn">
+                            شاهد اول درس اون لاين
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check2">
+                    <label class="accordion-label" for="check2">
+                        <span><span class="lesson">Lesson 2:</span> HTML Attributes and Style Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Use class attribute</li>
+                            <li>Use id attribute</li>
+                            <li>Use style attribute</li>
+                            <li>Use style element </li>
+                            <li>Understand basic selectors</li>
+                            <li>Style project 01</li>
+                            <li>Understand the basic of git and GitHub</li>
+                            <li>Install git</li>
+                            <li>Create GitHub account </li>
+                            <li>Understand our GitHub student-instructor team workflow</li>
+                            <li>Create your first GitHub pages</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check3">
+                    <label class="accordion-label" for="check3">
+                        <span><span class="lesson">Lesson 3:</span> HTML Text and Semantic Elements</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>How to use links</li>
+                            <li>Understand file path</li>
+                            <li>How to use &lt;nav&gt;, &lt;menu&gt; elements</li>
+                            <li>How to use semantic elements: &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;
+                                &lt;section&gt;, &lt;article&gt; &lt;address&gt;, &lt;small&gt;</li>
+                            <li>How to use div, span elements</li>
+                            <li>How to use &lt;br&gt;, &lt;hr&gt; elements</li>
+                            <li>How to use &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt; elements</li>
+                            <li>How to use &lt;blockquote&gt; , &lt;q&gt;, &lt;mark&gt;, &lt;strong&gt;, &lt;em&gt;,
+                                &lt;del&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;code&gt;,&lt;pre&gt; elements</li>
+                            <li>VSCode basic skills</li>
+                            <li>Add VSCode extensions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check4">
+                    <label class="accordion-label" for="check4">
+                        <span><span class="lesson">Lesson 4:</span> HTML Media Elements</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>How to use img element</li>
+                            <li>How to use svg element</li>
+                            <li>How to use video element</li>
+                            <li>How to use audio element</li>
+                            <li>How to use Iframe element</li>
+                            <li>How to add entities, symbols, and emojis to a webpage </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check5">
+                    <label class="accordion-label" for="check5">
+                        <span><span class="lesson">Lesson 5:</span> HTML Form Elements</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Introduction to the form, the form action, and the form methods.</li>
+                            <li>Form elements</li>
+                            <li>Form attributes</li>
+                            <li>Learn how to use DevTool</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="sec " id="css">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ CSS</h2>
+                <img src="img/css3.svg" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check6">
+                    <label class="accordion-label" for="check6">
+                        <span><span class="lesson">Lesson 6:</span> CSS basic selectors, CSS Color and box-model</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Color models, values and units </li>
+                            <li>Understand box-model: content, padding, border, margin, outline.</li>
+                            <li>Understand width, height, min-width, min-height, max-width, max-height</li>
+                            <li>Understand box-sizing</li>
+                            <li>Understand box-shadow</li>
+                            <li>Learn more about DevTool</li>
+                            <li>Add VSCode extensions</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check7">
+                    <label class="accordion-label" for="check7">
+                        <span><span class="lesson">Lesson 7:</span> CSS Background</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Background-color</li>
+                            <li>Background-image</li>
+                            <li>Background-repeat</li>
+                            <li>Background-attachment</li>
+                            <li>Background-position</li>
+                            <li>Background (shorthand property)</li>
+                            <li>Background-size</li>
+                            <li>Background-origin</li>
+                            <li>Background-clip</li>
+                            <li>Linear gradient function</li>
+                            <li>Radial gradient function</li>
+                            <li>CSS opacity / transparency</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check8">
+                    <label class="accordion-label" for="check8">
+                        <span><span class="lesson">Lesson 8:</span> CSS Text, CSS Links, CSS display property</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Text color</li>
+                            <li>Text alignment</li>
+                            <li>Text decoration</li>
+                            <li>Text transformation</li>
+                            <li>Text spacing</li>
+                            <li>Text shadow</li>
+                            <li>Text-overflow</li>
+                            <li>Line-height</li>
+                            <li>Word-wrap</li>
+                            <li>Word-break</li>
+                            <li>Writing-mode</li>
+                            <li>A:link </li>
+                            <li>A:visited </li>
+                            <li>A:hover</li>
+                            <li>A:active</li>
+                            <li>Dealing with CSS display property: inline, block, inline-block, and none values</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check9">
+                    <label class="accordion-label" for="check9">
+                        <span><span class="lesson">Lesson 9:</span> CSS Icons and Fonts</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Font family</li>
+                            <li>Font web safe</li>
+                            <li>Font fallbacks</li>
+                            <li>Font style</li>
+                            <li>Font size</li>
+                            <li>Font Google</li>
+                            <li>Font pairings</li>
+                            <li>Font shorthand</li>
+                            <li>Font awesome icons</li>
+                            <li>Bootstrap icons</li>
+                            <li>Google icons</li>
+                            <li>CSS svg</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check10">
+                    <label class="accordion-label" for="check10">
+                        <span><span class="lesson">Lesson 10:</span> CSS Layout I: CSS Float vs CSS Flex</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Float left</li>
+                            <li>Float right</li>
+                            <li>Float clear</li>
+                            <li>Flex container</li>
+                            <li>Flex-direction</li>
+                            <li>Flex-wrap</li>
+                            <li>Flex-flow</li>
+                            <li>Justify-content</li>
+                            <li>Align-items</li>
+                            <li>Align-content</li>
+                            <li>Flex items</li>
+                            <li>Items order</li>
+                            <li>Flex-grow</li>
+                            <li>Flex-shrink</li>
+                            <li>Flex-basis</li>
+                            <li>Align-self</li>
+                            <li>Float vs flex</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check11">
+                    <label class="accordion-label" for="check11">
+                        <span><span class="lesson">Lesson 11:</span> CSS Layout II: CSS Flex vs CSS Gride</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Grid layout module</li>
+                            <li>Grid container</li>
+                            <li>Grid item</li>
+                            <li>Flex vs CSS gride</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check12">
+                    <label class="accordion-label" for="check12">
+                        <span><span class="lesson">Lesson 12:</span> CSS position and Center Alignment</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Static</li>
+                            <li>Relative</li>
+                            <li>Fixed</li>
+                            <li>Absolute</li>
+                            <li>Sticky</li>
+                            <li>Z-index</li>
+                            <li>Overflow</li>
+                            <li>Center using flex</li>
+                            <li>Center using margin</li>
+                            <li>Center using position</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check13">
+                    <label class="accordion-label" for="check13">
+                        <span><span class="lesson">Lesson 13:</span> Advance CSS Selectors and pseudo</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Attribute selectors</li>
+                            <li>Combinators</li>
+                            <li>Pseudo-classes</li>
+                            <li>Pseudo-elements</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check14">
+                    <label class="accordion-label" for="check14">
+                        <span><span class="lesson">Lesson 14:</span> CSS Responsive</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Introduction to CSS Responsive</li>
+                            <li>Viewport</li>
+                            <li>Grid-View</li>
+                            <li>CSS Media Queries</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check15">
+                    <label class="accordion-label" for="check15">
+                        <span><span class="lesson">Lesson 15:</span> CSS Math Functions, Variables, Units and
+                            Specificity </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Overriding variables</li>
+                            <li>Variables and JavaScript</li>
+                            <li>Variables in media queries</li>
+                            <li>Calc()</li>
+                            <li>Max()</li>
+                            <li>Min()</li>
+                            <li>Specificity hierarchy</li>
+                            <li>Calculate specificity</li>
+                            <li>Specificity rules</li>
+                            <li>Absolute units</li>
+                            <li>Relative units</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check16">
+                    <label class="accordion-label" for="check16">
+                        <span><span class="lesson">Lesson 16:</span> CSS Transition and Transformation</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Translate()</li>
+                            <li>Rotate()</li>
+                            <li>Scale()</li>
+                            <li>Skew()</li>
+                            <li>Matrix()</li>
+                            <li>Transition</li>
+                            <li>Transition-delay</li>
+                            <li>Transition-duration</li>
+                            <li>Transition-property</li>
+                            <li>Transition-timing-function</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check17">
+                    <label class="accordion-label" for="check17">
+                        <span><span class="lesson">Lesson 17:</span> CSS Animation and Filter </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>@Keyframes</li>
+                            <li>Animation-name</li>
+                            <li>Animation-duration</li>
+                            <li>Animation-delay</li>
+                            <li>Animation-iteration-count</li>
+                            <li>Animation-direction</li>
+                            <li>Animation-timing-function</li>
+                            <li>Animation-fill-mode</li>
+                            <li>Animation shorthand</li>
+                            <li>Filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() |
+                                hue-rotate() | invert() | opacity() | saturate() | sepia() | url();</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sec " id="js">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ JavaScript</h2>
+                <img src="img/javascript.png" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check18">
+                    <label class="accordion-label" for="check18">
+                        <span><span class="lesson">Lesson 18:</span> JavaScript Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>JavaScript Syntax</li>
+                            <li>Variables</li>
+                            <li>Let</li>
+                            <li>Const</li>
+                            <li>Operators</li>
+                            <li>Arithmetic</li>
+                            <li>Assignment</li>
+                            <li>Data types</li>
+                            <li>Events</li>
+                            <li>String methods</li>
+                            <li>Comparisons- If else - Switch</li>
+                            <li>Loops</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check19">
+                    <label class="accordion-label" for="check19">
+                        <span><span class="lesson">Lesson 19:</span> JavaScript Arrays and Functions</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Array types</li>
+                            <li>Array methods</li>
+                            <li>Array sort</li>
+                            <li>Array iteration</li>
+                            <li>Array const</li>
+                            <li>Sets</li>
+                            <li>Maps</li>
+                            <li>Typeof</li>
+                            <li>Type conversion</li>
+                            <li>Arrow function</li>
+                            <li>Function definitions</li>
+                            <li>Function parameters</li>
+                            <li>Function invocation</li>
+                            <li>Function call</li>
+                            <li>Function bind</li>
+                            <li>Function closures</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check20">
+                    <label class="accordion-label" for="check20">
+                        <span><span class="lesson">Lesson 20:</span> JavaScript DOM I</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>HTML DOM</li>
+                            <li>DOM Intro</li>
+                            <li>DOM Methods</li>
+                            <li>DOM Document</li>
+                            <li>DOM Elements</li>
+                            <li>DOM HTML</li>
+                            <li>DOM Forms</li>
+                            <li>DOM CSS</li>
+                            <li>DOM Animations</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check21">
+                    <label class="accordion-label" for="check21">
+                        <span><span class="lesson">Lesson 21:</span> JavaScript DOM II</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>DOM Events</li>
+                            <li>DOM Event Listener</li>
+                            <li>DOM Navigation</li>
+                            <li>DOM Nodes</li>
+                            <li>DOM Collections</li>
+                            <li>DOM Node Lists</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check22">
+                    <label class="accordion-label" for="check22">
+                        <span><span class="lesson">Lesson 22:</span> Complete Project 01</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Complete project style</li>
+                            <li>Create Your first GitHub Pages</li>
+                            <li>Tips and Tricks </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sec " id="jquery">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ JQuery</h2>
+                <img src="img/jquery-vertical.png" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check23">
+                    <label class="accordion-label" for="check23">
+                        <span><span class="lesson">Lesson 23:</span> jQuery Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Syntax</li>
+                            <li>Selectors</li>
+                            <li>Events</li>
+                            <li>Effects</li>
+                            <li>HTML</li>
+                            <li>Get</li>
+                            <li>Set</li>
+                            <li>Add</li>
+                            <li>Remove</li>
+                            <li>CSS Classes</li>
+                            <li>CSS()</li>
+                            <li>Dimensions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check24">
+                    <label class="accordion-label" for="check24">
+                        <span><span class="lesson">Lesson 24:</span> jQuery Effects and jQuery Traversing</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Hide/Show</li>
+                            <li>Fade</li>
+                            <li>Slide</li>
+                            <li>Animate</li>
+                            <li>stop()</li>
+                            <li>Callback</li>
+                            <li>Chaining</li>
+                            <li>Traversing</li>
+                            <li>Ancestors</li>
+                            <li>Descendants</li>
+                            <li>Siblings</li>
+                            <li>Filtering</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="sec " id="bootstrap">
+
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ Bootstrap</h2>
+                <img src="img/Bootstrap.svg" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check25">
+                    <label class="accordion-label" for="check25">
+                        <span><span class="lesson">Lesson 25:</span> Bootstrap Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>BS5 Containers</li>
+                            <li>BS5 Typography</li>
+                            <li>BS5 Colors</li>
+                            <li>BS5 Tables</li>
+                            <li>BS5 Images</li>
+                            <li>BS5 Jumbotron</li>
+                            <li>BS5 Alerts</li>
+                            <li>BS5 Buttons</li>
+                            <li>BS5 Button Groups</li>
+                            <li>BS5 Utilities</li>
+                            <li>BS5 Flex</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check26">
+                    <label class="accordion-label" for="check26">
+                        <span><span class="lesson">Lesson 26:</span> Bootstrap Grid System</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>BS5 Stacked/Horizontal</li>
+                            <li>BS5 Grid XSmall</li>
+                            <li>BS5 Grid Small</li>
+                            <li>BS5 Grid Medium</li>
+                            <li>BS5 Grid Large</li>
+                            <li>BS5 Grid XLarge</li>
+                            <li>BS5 Grid XXL</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check27">
+                    <label class="accordion-label" for="check27">
+                        <span><span class="lesson">Lesson 27:</span> Bootstrap Components I</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>BS5 Badges</li>
+                            <li>BS5 Progress Bars</li>
+                            <li>BS5 Spinners</li>
+                            <li>BS5 Pagination</li>
+                            <li>BS5 List Groups</li>
+                            <li>BS5 Cards</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check28">
+                    <label class="accordion-label" for="check28">
+                        <span><span class="lesson">Lesson 28:</span> Bootstrap Components II</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>BS5 Dropdowns</li>
+                            <li>BS5 Collapse</li>
+                            <li>BS5 Navs</li>
+                            <li>BS5 Navbar</li>
+                            <li>BS5 Carousel</li>
+                            <li>BS5 Modal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check29">
+                    <label class="accordion-label" for="check29">
+                        <span><span class="lesson">Lesson 29:</span> Bootstrap Components III</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>BS5 Tooltip</li>
+                            <li>BS5 Popover</li>
+                            <li>BS5 Toast</li>
+                            <li>BS5 Scrollspy</li>
+                            <li>BS5 Offcanvas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check30">
+                    <label class="accordion-label" for="check30">
+                        <span><span class="lesson">Lesson 30:</span> Bootstrap design project 02</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Design Blog Website</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sec " id="php">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات للغة الــ MySQL and PHP</h2>
+                <img src="img/mysql.svg" width="75" alt="">
+                <img src="img/PHP.svg" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check31">
+                    <label class="accordion-label" for="check31">
+                        <span><span class="lesson">Lesson 31:</span> PHP Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>PHP Intro</li>
+                            <li>PHP Install and environment preparation </li>
+                            <li>PHP Syntax</li>
+                            <li>PHP Comments</li>
+                            <li>PHP Variables</li>
+                            <li>PHP Echo / Print</li>
+                            <li>PHP Data Types</li>
+                            <li>PHP Strings</li>
+                            <li>PHP Numbers</li>
+                            <li>PHP Math</li>
+                            <li>PHP Constants</li>
+                            <li>PHP Operators</li>
+                            <li>PHP If...Else...Elseif</li>
+                            <li>PHP Switch</li>
+                            <li>PHP Loops</li>
+                            <li>PHP Functions</li>
+                            <li>PHP Arrays</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check32">
+                    <label class="accordion-label" for="check32">
+                        <span><span class="lesson">Lesson 32:</span> PHP Form</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>PHP Superglobals</li>
+                            <li>PHP Form Get Method</li>
+                            <li>PHP Form Post Method</li>
+                            <li>PHP Form Input data</li>
+                            <li>PHP Form Select</li>
+                            <li>PHP Form checkbox</li>
+                            <li>PHP Form radio</li>
+                            <li>PHP Complete Registration Form</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check33">
+                    <label class="accordion-label" for="check33">
+                        <span><span class="lesson">Lesson 33:</span> PHP MySQL</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Intro to SQL</li>
+                            <li>MySQL Create DB</li>
+                            <li>MySQL Drop DB</li>
+                            <li>MySQL Create User</li>
+                            <li>MySQL Create Table</li>
+                            <li>MySQL Drop Table</li>
+                            <li>MySQL Alter Table</li>
+                            <li>MySQL Constraints</li>
+                            <li>MySQL Primary Key</li>
+                            <li>MySQL Foreign Key</li>
+                            <li>MySQL SELECT</li>
+                            <li>MySQL WHERE</li>
+                            <li>MySQL AND, OR, NOT</li>
+                            <li>MySQL ORDER BY</li>
+                            <li>MySQL INSERT INTO</li>
+                            <li>MySQL UPDATE</li>
+                            <li>MySQL DELETE</li>
+                            <li>MySQL LIMIT</li>
+                            <li>Admin Manager </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check34">
+                    <label class="accordion-label" for="check34">
+                        <span><span class="lesson">Lesson 34:</span> PHP Manage Multiple Page </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Design blog pages</li>
+                            <li>Understand include, required, include_once, and required_once</li>
+                            <li>Manage blog create/update/delete/display/select all</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check35">
+                    <label class="accordion-label" for="check35">
+                        <span><span class="lesson">Lesson 35:</span> PHP Filter and Validation</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Filter_var()</li>
+                            <li>Filter_has_var()</li>
+                            <li>Filter_var_array()</li>
+                            <li>Predefined filter constants</li>
+                            <li>Sanitize vs validation</li>
+                            <li>Validate integer </li>
+                            <li>Validate an email</li>
+                            <li>Validate an url</li>
+                            <li>Validate an ip address</li>
+                            <li>Php callback functions</li>
+                            <li>Array_map()</li>
+                            <li>Array_filtter()</li>
+                            <li>Array_reduce()</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check36">
+                    <label class="accordion-label" for="check36">
+                        <span><span class="lesson">Lesson 36:</span> PHP upload File and File System</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>PHP Include</li>
+                            <li>PHP File Handling</li>
+                            <li>PHP File Open/Read</li>
+                            <li>PHP File Create/Write</li>
+                            <li>PHP File Upload</li>
+                            <li>PHP Validate File</li>
+                            <li>PHP Predefined function</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check37">
+                    <label class="accordion-label" for="check37">
+                        <span><span class="lesson">Lesson 37:</span> PHP Session and Cookies</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What are cookies?</li>
+                            <li>What is session?</li>
+                            <li>Cookie vs session</li>
+                            <li>Cookie real world use cases</li>
+                            <li>Create/retrieve a cookie</li>
+                            <li>Modify a cookie value</li>
+                            <li>Delete a cookie</li>
+                            <li>Check if cookies are enabled</li>
+                            <li>Start a PHP session</li>
+                            <li>Get PHP session variable values</li>
+                            <li>Modify a PHP session variable</li>
+                            <li>Destroy a PHP session</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check38">
+                    <label class="accordion-label" for="check38">
+                        <span><span class="lesson">Lesson 38:</span> PHP Authentication I</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Build Signup page</li>
+                            <li>Build Login page</li>
+                            <li>Build Logout page</li>
+                            <li>Add access control </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check39">
+                    <label class="accordion-label" for="check39">
+                        <span><span class="lesson">Lesson 39:</span> PHP Security Issues I</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Understanding bypass restriction attacks and how to prevent them</li>
+                            <li>Understanding query string attacks and how to prevent them</li>
+                            <li>Understanding cookies attacks and how to prevent them</li>
+                            <li>Understanding hidden field attacks and how to prevent them</li>
+                            <li>Understanding URL jumping attacks and how to prevent them</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check40">
+                    <label class="accordion-label" for="check40">
+                        <span><span class="lesson">Lesson 40:</span> PHP Security Issues II</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Understanding CSRF attacks and how to prevent them</li>
+                            <li>Understanding XSS attacks and how to prevent them</li>
+                            <li>Understanding session hijackings and how to prevent them</li>
+                            <li>Understanding SQL injections and how to prevent them</li>
+                            <li>Understanding directory traversal attacks and how to prevent them.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check41">
+                    <label class="accordion-label" for="check41">
+                        <span><span class="lesson">Lesson 41:</span> PHP Authorization and access permissions </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Update User Table</li>
+                            <li>Create user management panel for admin</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check42">
+                    <label class="accordion-label" for="check42">
+                        <span><span class="lesson">Lesson 42:</span> PHP pagination</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is pagination?</li>
+                            <li>Create a pagination functionality for blogs</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check43">
+                    <label class="accordion-label" for="check43">
+                        <span><span class="lesson">Lesson 43:</span> PHP Ajax and Complete Project 04</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is ajax?</li>
+                            <li>How AJAX Works</li>
+                            <li>AJAX data format- JSON, HTML, Text, XML</li>
+                            <li>Create ajax for pagination</li>
+                            <li>Create ajax for username validation on register form</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sec " id="advance">
+            <div style="text-align: center; font-size: 1.2em;">
+                <h2>جدول المحتويات المتعلق بالدروس المتقدمة </h2>
+                <img src="img/laravel-2.svg" width="75" alt="">
+                <img src="img/wordpress-icon.svg" width="75" alt="">
+            </div>
+            <div class="accordion-wrapper" dir="ltr">
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check44">
+                    <label class="accordion-label" for="check44">
+                        <span><span class="lesson">Lesson 44:</span> PHP OOP Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>PHP What is OOP</li>
+                            <li>PHP Classes/Objects</li>
+                            <li>PHP Constructor</li>
+                            <li>PHP Access Modifiers</li>
+                            <li>PHP Inheritance</li>
+                            <li>PHP Constants</li>
+                            <li>PHP Static Methods</li>
+                            <li>PHP Static Properties</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check45">
+                    <label class="accordion-label" for="check45">
+                        <span><span class="lesson">Lesson 45:</span> PHP Composer</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is composer?</li>
+                            <li>Install composer</li>
+                            <li>Namespace</li>
+                            <li>PHP mailer</li>
+                            <li>Contact form </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check46">
+                    <label class="accordion-label" for="check46">
+                        <span><span class="lesson">Lesson 46:</span> PHP Authentication II</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Remember me</li>
+                            <li>Forget password</li>
+                            <li>Email for registration activation</li>
+                            <li>Email for password recovery</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check47">
+                    <label class="accordion-label" for="check47">
+                        <span><span class="lesson">Lesson 47:</span> PHP MVC Framework Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is PHP MVC framework?</li>
+                            <li>Why use PHP MVC framework?</li>
+                            <li>PHP MVC design pattern</li>
+                            <li>Types of PHP MVC framework</li>
+                            <li>Create a basic MVC PHP project</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check48">
+                    <label class="accordion-label" for="check48">
+                        <span><span class="lesson">Lesson 48:</span>PHP Laravel Framework Fundamentals </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is Laravel framework?</li>
+                            <li>Understand some terminologies</li>
+                            <li>Understand Laravel lifecycle requests</li>
+                            <li>Understand Laravel kernels</li>
+                            <li>Understand service providers</li>
+                            <li>Understand controllers & middleware</li>
+                            <li>Installation and configuration </li>
+                            <li>Create a simple task list Laravel project</li>
+                            <li>What is plugin?</li>
+                            <li>Add plugin</li>
+                            <li>What is next?</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check49">
+                    <label class="accordion-label" for="check49">
+                        <span><span class="lesson">Lesson 49:</span> PHP WordPress Fundamentals</span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is Content Management System (CMS)?</li>
+                            <li>What is WordPress?</li>
+                            <li>WordPress terminologies</li>
+                            <li>WordPress installation</li>
+                            <li>WordPress Dashboard</li>
+                            <li>Create a simple WordPress website</li>
+                            <li>WordPress posts</li>
+                            <li>WordPress pages</li>
+                            <li>WordPress categories</li>
+                            <li>WordPress tags</li>
+                            <li>WordPress comments</li>
+                            <li>What is next?</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="accordion">
+                    <input type="radio" name="radio-a" id="check50">
+                    <label class="accordion-label" for="check50">
+                        <span><span class="lesson">Lesson 50:</span> Domain, Hosting, FreeLancer, and Digital Marketing
+                        </span>
+                    </label>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>What is domain?</li>
+                            <li>How to select good domain?</li>
+                            <li>What is hosting?</li>
+                            <li>How to select good hosting provider?</li>
+                            <li>Purchase your first domain and hosting?</li>
+                            <li>What is freelancer?</li>
+                            <li>How to register as freelancer?</li>
+                            <li>What are the points that help you success as freelancer?</li>
+                            <li>How to earn from the internet?</li>
+                            <li>How to apply in google AdSense?</li>
+                            <li>How to perform a digital marketing for your product through Facebook, YouTube, and
+                                Twitter?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec desc" style="padding:30px; margin:0px">
+        <h2>سجل الآن</h2>
+    </section>
+    <section class="sec" id="register-form">
+        <h2 style="text-align: center;">للتسجيل يُرجى تعبئة النموذج وسوف نتواصل معك</h2>
+        <form action="https://computing-school.000webhostapp.com" method="post">
+            <input type="hidden" name="form" value="traning-register">
+            <input type="text" name="name" id="" placeholder="الاسم الثلاثي">
+            <input type="email" name="email" id="" placeholder="الايميل">
+            <input type="number" name="mobile" id="" placeholder="رقم الجوال">
+            <div>
+                <h3 style="display: inline;">الحاله العلمية</h3>
+                <select name="education" id="">
+                    <option value="1">خريج جامعي</option>
+                    <option value="2">طالب جامعي</option>
+                    <option value="3">خريج ثانوية عامه</option>
+                    <option value="4">شيء آخر</option>
+                </select>
+            </div>
+            <div>
+                <h3>الحالة الوظيفية</h3>
+                <div style="display: inline;">
+                    <input type="radio" name="job" value="1" id="has-job">
+                    <label for="has-job">موظف</label>
+                </div>
+
+                <div style="display: inline-block; margin-right: 20px;">
+                    <input type="radio" name="job" value="2" id="no-job">
+                    <label for="no-job">غير موظف</label>
+                </div>
+            </div>
+            <div>
+                <h3>الوقت المناسب لك</h3>
+               <div style="margin-right: 20px;">
+                <div  style="display: inline-block; ">
+                    <input type="radio" name="time" value="1" id="time1">
+                    <label for="time1">2:00-4:00 عصراً</label>
+                </div>
+
+                <div  style="display: inline-block; margin-right: 20px;">
+                    <input type="radio" name="time" value="2" id="time2">
+                    <label for="time1">4:00-6:00 عصراً</label>
+                </div>
+               </div>
+                
+            </div>
+            <input style="margin-top:20px; font-size:2rem; border: none; padding:10px 30px; cursor: pointer;" type="submit" value="ارسال" class="btn" >
+        </form>
+    </section>
+</body>
+
+</html>
