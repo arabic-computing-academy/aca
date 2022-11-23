@@ -327,25 +327,26 @@
                     style="border: 0" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <form action="" class="contact-form" id="demo-form">
+            <form action="https://computing-school.000webhostapp.com" class="contact-form" id="demo-form">
+                <input type="hidden" name="form" value="contact-form">
                 <div>
-                    <input type="text" placeholder="الاسم" />
+                    <input type="text" name="name" placeholder="الاسم" />
                     <i class="fa fa-user fa-fw"></i>
                 </div>
                 <div>
-                    <input type="text" placeholder="الايميل" />
+                    <input type="email" name="email" placeholder="الايميل" />
                     <i class="fa fa-envelope fa-fw"></i>
                 </div>
                 <div>
-                    <input type="text" placeholder="الجوال" />
+                    <input type="number" name="mobile" maxlength="10" placeholder="الجوال" />
                     <i class="fa fa-phone fa-fw"></i>
                 </div>
                 <div>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="الرساله"></textarea>
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="الرساله"></textarea>
                 </div>
 
                 <div>
-                    <button class="btn" style="font-size:1.5rem ;">أرسال</button>
+                    <button type="submit" class="btn" style="font-size:1.5rem ;">أرسال</button>
                 </div>
             </form>
         </div>
