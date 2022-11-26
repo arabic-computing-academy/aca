@@ -1736,6 +1736,11 @@
                 document.getElementById('msg').innerHTML = '<p style=" padding:10px 30px; background-color: #7ae57a; color: black; border-radius: 5px;  ">تم الارسال بنجاح</p>';
             }
         }
+
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function () { }
+        xmlhttp.open("GET", "https://computing-school.000webhostapp.com?q=count");
+        xmlhttp.send();
     </script>
 </body>
 
